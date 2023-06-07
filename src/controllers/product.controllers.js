@@ -48,7 +48,7 @@ const updateProduct = catchError(async (req, res) => {
 	const { id } = req.params;
 	const { title, description, price, brand } = req.body;
 	const updatedProduct = await Product.update(
-		{ title, description, price },
+		{ title, description, price, brand },
 		{ where: { id }, returning: true }
 	);
 
