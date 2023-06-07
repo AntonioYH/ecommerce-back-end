@@ -46,7 +46,7 @@ const removeProduct = catchError(async (req, res) => {
 
 const updateProduct = catchError(async (req, res) => {
 	const { id } = req.params;
-	const { title, description, price } = req.body;
+	const { title, description, price, brand } = req.body;
 	const updatedProduct = await Product.update(
 		{ title, description, price },
 		{ where: { id }, returning: true }
